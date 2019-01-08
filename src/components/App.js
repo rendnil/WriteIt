@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 class App extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.props.state);
     return (
       <React.Fragment>
         hey
@@ -14,7 +14,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {state:state}
+  return {state:state.posts}
 }
 
 export default connect(mapStateToProps)(App)

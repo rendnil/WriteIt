@@ -5,7 +5,7 @@ export default class PostAdapter{
   static getAllPosts(){
     return(
       fetch(`${apiBaseUrl}/posts`)
-      .then(r=>r.json)
+      .then(r=>r.json())
     )
   }
 }
