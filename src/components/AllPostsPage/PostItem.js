@@ -4,7 +4,10 @@ import React from "react"
 class PostItem extends React.Component{
   render(){
     return(
-      <li>Post Item</li>
+      <div>
+      <li>{this.props.post.title}</li>
+      <li style={{position:"relative", left:"10%"}}>{this.props.post.content}</li>
+      </div>
     )
   }
 }
