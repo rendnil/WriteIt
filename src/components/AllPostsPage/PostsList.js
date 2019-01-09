@@ -6,9 +6,11 @@ const PostsList = ({posts}) => {
   return(
     <div>
     <h2> Posts List </h2>
-    {posts.map((post)=>{
-      return <PostItem key={post.id} post={post} />
-    })}
+      <div style={{margin:"auto", maxWidth:"80%"}}>
+        {posts.map((post)=>{
+          return <PostItem key={post.id} post={post} />
+        })}
+      </div>
     </div>
   )
 }
