@@ -8,4 +8,24 @@ export default class PostAdapter{
       .then(r=>r.json())
     )
   }
+
+  static updatePostUpvotes(id, upvotes){
+    return(
+      fetch(`${apiBaseUrl}/posts/${id}`,{
+        method: "PATCH",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          post:{
+            upvotes: upvotes
+          }
+        })
+      })//end fetch
+      .then(r=>r.json())
+    )
+  }
+
+
 }
