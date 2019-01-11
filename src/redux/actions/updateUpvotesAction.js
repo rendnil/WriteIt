@@ -8,3 +8,11 @@ export const updateUpvotes = (id, upvotes) => {
     })
   }
 }
+export const updateDownvotes = (id, downvotes) => {
+  return (dispatch) => {
+    PostAdapter.updatePostDownvotes(id, downvotes)
+    .then((data) => {
+      dispatch({type:"UPDATE_DOWNVOTES", payload:data})
+    })
+  }
+}
