@@ -12,6 +12,7 @@ class PostItem extends React.Component{
 
 
   render(){
+    console.log("render post ITEM", this.props.post.title);
     return(
       <div style={{borderStyle: "solid", borderWidth:"2px", marginBottom:"2%"}}>
       <li>{this.props.post.title}</li>

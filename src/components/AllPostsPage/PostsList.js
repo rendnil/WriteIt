@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PostItem from "./PostItem"
 
 const PostsList = ({posts}) => {
+  console.log("render post list");
   return(
     <div>
     <h2> Posts List </h2>
