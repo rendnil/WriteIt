@@ -27,5 +27,23 @@ export default class PostAdapter{
     )
   }
 
+  static updatePostDownvotes(id, downvotes){
+    return(
+      fetch(`${apiBaseUrl}/posts/${id}`,{
+        method: "PATCH",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          post:{
+            downvotes: downvotes
+          }
+        })
+      })//end fetch
+      .then(r=>r.json())
+    )
+  }
+
 
 }
