@@ -4,7 +4,7 @@ import {updateUpvotes} from "../../redux/actions/updateUpvotesAction"
 
 class PostItem extends React.Component{
   handleUpvotes = () => {
-
+    this.props.updateUpvotes(this.props.post.id, this.props.post.upvotes+1)
   }
 
 
@@ -27,7 +27,7 @@ class PostItem extends React.Component{
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return{updateUpvotes: ()=>dispatch(updateUpvotes)}
+  return{updateUpvotes: (id, upvotes)=>dispatch(updateUpvotes(id, upvotes))}
 }
 
 export default connect(null, mapDispatchToProps)(PostItem)
