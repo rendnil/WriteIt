@@ -11,10 +11,10 @@ const PostsList = ({posts}) => {
     <h2> Posts List </h2>
       <div style={{margin:"auto", maxWidth:"80%"}}>
 
-        {DateBuilder.sortNetVotes(posts).map((post)=>{
+        {DateBuilder.sortLatest(posts).map((post)=>{
           return <PostItem key={post.id} post={post} />
         })}
-        
+
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 import {createPost} from "../../redux/actions/createPostAction"
+import {Redirect} from "react-router"
 
 class PostForm extends React.Component{
   state = {

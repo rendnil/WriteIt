@@ -16,7 +16,8 @@ const postsReducer = (state=defaultState, action) =>{
       })
       return [...otherPosts, action.payload]
 
-      
+    case "CREATE_POST":
+      return [...state, action.payload]
 
     default:
         return state
