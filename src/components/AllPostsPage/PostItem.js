@@ -15,10 +15,10 @@ class PostItem extends React.Component{
     console.log("render post ITEM", this.props.post.title);
     return(
       <div style={{borderStyle: "solid", borderWidth:"2px", marginBottom:"2%"}}>
-      <li>{this.props.post.title}</li>
-      <li style={{width:"90%", marginLeft:"10%"}}>{this.props.post.content}</li>
-      <li style={{position:"relative", left:"20%"}}>Upvotes: {this.props.post.upvotes}</li>
-      <li style={{position:"relative", left:"20%"}}>Downvotes: {this.props.post.downvotes}</li>
+      <h3>{this.props.post.title}</h3>
+      <li style={{position:"relative"}}>{this.props.post.content}</li>
+      <li style={{marginLeft:"20%"}}>Upvotes: {this.props.post.upvotes}</li>
+      <li style={{position:"relative", left:"20%", width:"20%"}}>Downvotes: {this.props.post.downvotes}</li>
       <li style={{position:"relative", left:"20%"}}>Net: {this.props.post.upvotes-this.props.post.downvotes} </li>
 
       <button onClick={this.handleUpvotes}>Up</button>
