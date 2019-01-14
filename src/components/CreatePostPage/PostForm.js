@@ -6,7 +6,8 @@ import {Redirect} from "react-router"
 class PostForm extends React.Component{
   state = {
     title: "",
-    content: ""
+    content: "",
+    submitted: false
   }
 
   handleChange = (event) => {
@@ -16,22 +17,28 @@ class PostForm extends React.Component{
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createPost(12, this.state.title, this.state.content)
+    this.setState({submitted:true})
 
   }
 
   render(){
-    return(
-      <div>
-      <h1>Post Form</h1>
+    if (!this.state.submitted){
+
+      return(
+        <div>
+        <h1>Post Form</h1>
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.title} name="title"id="postTitle" type = "text" placeholder="Title"/>
-          <br/>
-          <textarea onChange={this.handleChange} name="content" id="postContent" rows="10" cols="20" placeholder="Content"/>
-          <br/>
-          <input type="submit" value="Submit"/>
+        <input onChange={this.handleChange} value={this.state.title} name="title"id="postTitle" type = "text" placeholder="Title"/>
+        <br/>
+        <textarea onChange={this.handleChange} name="content" id="postContent" rows="10" cols="20" placeholder="Content"/>
+        <br/>
+        <input type="submit" value="Submit"/>
         </form>
-      </div>
-    )
+        </div>
+      )
+    }else{
+      return (<Redirect to="/"/>)
+    }
   }
 
 }
