@@ -9,6 +9,25 @@ export default class PostAdapter{
     )
   }
 
+  static createPost(userId, title, content){
+    return(
+      fetch(`${apiBaseUrl}/posts`,{
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          post:{
+            user_id: userId,
+            title: title,
+            content: content
+          }
+        })
+      })//end fetch
+      .then(r=>r.json())
+    )
+  }
   static updatePostUpvotes(id, upvotes){
     return(
       fetch(`${apiBaseUrl}/posts/${id}`,{
