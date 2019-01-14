@@ -22,8 +22,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {state:state.posts}
-}
+// const mapStateToProps = (state) => {
+//   return {state:state.posts}
+// }
 
-export default connect(mapStateToProps)(App)
+export default App
