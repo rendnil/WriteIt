@@ -1,17 +1,17 @@
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 export default class PostAdapter{
 
   static getAllPosts(){
     return(
-      fetch(`${apiBaseUrl}/posts`)
+      fetch(`${API_BASE_URL}/posts`)
       .then(r=>r.json())
     )
   }
 
   static createPost(userId, title, content){
     return(
-      fetch(`${apiBaseUrl}/posts`,{
+      fetch(`${API_BASE_URL}/posts`,{
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -30,7 +30,7 @@ export default class PostAdapter{
   }
   static updatePostUpvotes(id, upvotes){
     return(
-      fetch(`${apiBaseUrl}/posts/${id}`,{
+      fetch(`${API_BASE_URL}/posts/${id}`,{
         method: "PATCH",
         headers: {
           "Accept": "application/json",
@@ -48,7 +48,7 @@ export default class PostAdapter{
 
   static updatePostDownvotes(id, downvotes){
     return(
-      fetch(`${apiBaseUrl}/posts/${id}`,{
+      fetch(`${API_BASE_URL}/posts/${id}`,{
         method: "PATCH",
         headers: {
           "Accept": "application/json",
