@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import NavBar from "./NavBar"
 import AllPostsPage from "./AllPostsPage/AllPostsPage"
 import CreatePostPage from "./CreatePostPage/CreatePostPage"
+import WelcomePage from "./WelcomePage/WelcomePage"
 
 class App extends Component {
   render() {
@@ -13,7 +14,8 @@ class App extends Component {
         <Router>
           <React.Fragment >
             <NavBar />
-            <Route exact path = "/" render = {()=> <AllPostsPage/>}/>
+            <Route exact path = "/" render = {() => <WelcomePage/>}/>
+            <Route exact path = "/posts" render = {()=> <AllPostsPage/>}/>
             <Route exact path = "/new" render = {()=> <CreatePostPage/>}/>
           </React.Fragment>
         </Router>
