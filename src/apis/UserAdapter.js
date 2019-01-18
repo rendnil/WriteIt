@@ -19,7 +19,7 @@ export default class UserAdapter{
     )
   }
 
-  static logInUser(username,password){
+  static logInUser(username, password){
     return(
       fetch(`${API_BASE_URL}/login`,{
         method: "POST",
@@ -34,6 +34,16 @@ export default class UserAdapter{
           }
         })//end body
       })//end fetch
+    )
+  }
+
+  static fetchCurrentUser(){
+    return(
+      fetch(`${API_BASE_URL}/profile`,{
+        headers:{
+          "Authorization": `Bearer ${localStorage.getItem('jwt')}`
+        }
+      })
     )
   }
 
