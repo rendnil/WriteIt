@@ -15,9 +15,25 @@ export default class UserAdapter{
             password: password
           }
         })//end body
-
       })//end fetch
-      .then(r=>r.json())
+    )
+  }
+
+  static logInUser(username,password){
+    return(
+      fetch(`${API_BASE_URL}/login`,{
+        method: "POST",
+        headers:{
+          "Acccept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body:JSON.stringify({
+          user:{
+            username: username,
+            password: password
+          }
+        })//end body
+      })//end fetch
     )
   }
 

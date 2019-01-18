@@ -1,5 +1,6 @@
 import React from "react"
-
+import { connect } from 'react-redux'
+import {logInUser} from "../../redux/actions/userAction"
 
 class LogIn extends React.Component{
   state = {
@@ -13,6 +14,8 @@ class LogIn extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.logInUser(this.state.username, this.state.password)
+
   }
 
   render(){
@@ -32,4 +35,8 @@ class LogIn extends React.Component{
   }
 }
 
-export default LogIn
+const mapDispatchToProps = (dispatch) => {
+  return{logInUser: (username,password)=>dispatch(logInUser(username,password))}
+}
+
+export default connect(null,mapDispatchToProps)(LogIn)

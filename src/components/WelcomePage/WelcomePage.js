@@ -1,9 +1,11 @@
 import React from "react"
+import { connect } from 'react-redux'
 import LogIn from "./LogIn"
 import SignUp from "./SignUp"
 
 
-const WelcomePage = () => {
+const WelcomePage = (props) => {
+  console.log("USER STATE", props.user);
   return(
     <div>
     <h1>Welcome</h1>
@@ -15,4 +17,8 @@ const WelcomePage = () => {
 
 }
 
-export default WelcomePage
+const mapStateToProps = (state) => {
+  return{user:state.user}
+}
+
+export default connect(mapStateToProps)(WelcomePage)
