@@ -1,7 +1,7 @@
 import React from "react"
 import {NavLink} from 'react-router-dom';
 import {AppBar, Button, Toolbar, Typography} from '@material-ui/core';
-
+import withAuth from "../hocs/withAuth"
 
 const NavBar = () => {
   return(
@@ -11,7 +11,7 @@ const NavBar = () => {
     <Typography style={{marginRight:"5%"}} variant = "h4"color="inherit">WriteIt</Typography>
 
     <Button color="inherit">
-      <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/posts">Posts</NavLink>
+      <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/">Posts</NavLink>
     </Button>
     <Button color="inherit">
       <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/new">Create Post</NavLink>
@@ -23,4 +23,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default withAuth(NavBar)

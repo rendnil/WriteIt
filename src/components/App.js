@@ -14,8 +14,8 @@ class App extends Component {
         <Router>
           <React.Fragment >
             <NavBar />
-            <Route exact path = "/" render = {() => <WelcomePage/>}/>
-            <Route exact path = "/posts" render = {()=> <AllPostsPage/>}/>
+            <Route exact path = "/login" render = {() => <WelcomePage/>}/>
+            <Route exact path = "/" render = {()=> <AllPostsPage/>}/>
             <Route exact path = "/new" render = {()=> <CreatePostPage/>}/>
           </React.Fragment>
         </Router>

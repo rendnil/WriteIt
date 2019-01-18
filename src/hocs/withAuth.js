@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 import {Redirect} from "react-router"
-import {fetchCurrentUser} from "../../redux/actions/userAction"
+import {fetchCurrentUser} from "../redux/actions/userAction"
 
 const withAuth = (WrappedComponent) => {
   class AuthorizedComponent extends React.Component{
@@ -16,7 +16,7 @@ const withAuth = (WrappedComponent) => {
       }else if (localStorage.getItem('jwt') && this.props.authenticatingUser){
         return <h1>loading!!!!!!!</h1>
       }else{
-        <Redirect to= "/" />
+        return <Redirect to= "/login" />
       }
     }
 
@@ -24,6 +24,7 @@ const withAuth = (WrappedComponent) => {
 
 
   const mapStateToProps = (state) => {
+
     return{
       loggedIn: state.user.loggedIn,
       authenticatingUser: state.user.authenticatingUser
@@ -35,7 +36,7 @@ const withAuth = (WrappedComponent) => {
 
   }
 
-  return connect(mapStateToProps, mapStateToProps)(AuthorizedComponent)
+  return connect(mapStateToProps, mapDispatchToProps)(AuthorizedComponent)
 }
 
 export default withAuth
