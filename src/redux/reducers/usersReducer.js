@@ -10,8 +10,9 @@ const defaultState = {
 export default function(state=defaultState, action){
   switch(action.type){
     case "SET_CURRENT_USER":
-      return {...state, user:action.payload}
-
+      return {...state, user:action.payload, loggedIn: true, authenticatingUser:false}
+    case "FAILED_LOGIN":
+      return{...state, failedLogin:true}
 
     default:
       return state
