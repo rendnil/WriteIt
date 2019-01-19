@@ -16,7 +16,7 @@ class PostForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.createPost(12, this.state.title, this.state.content)
+    this.props.createPost(this.props.user.id, this.state.title, this.state.content)
     this.setState({submitted:true})
 
   }
@@ -43,8 +43,13 @@ class PostForm extends React.Component{
 
 }
 
+const mapStateToProps = (state) => {
+  return{user:state.user.user}
+}
+
+
 const mapDispatchToProps = (dispatch) => {
   return {createPost: (userId, title, content) => (dispatch(createPost(userId, title, content)))}
 }
 
-export default connect(null, mapDispatchToProps)(PostForm)
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm)
