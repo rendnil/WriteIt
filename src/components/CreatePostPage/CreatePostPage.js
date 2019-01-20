@@ -1,5 +1,6 @@
 import React from "react"
 import PostForm from "./PostForm"
+import withAuth from "../../hocs/withAuth"
 
 const CreatePostPage = () => {
   return(
@@ -12,4 +13,4 @@ const CreatePostPage = () => {
 }
 
 
-export default CreatePostPage
+export default withAuth(CreatePostPage)
