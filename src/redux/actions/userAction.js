@@ -53,6 +53,11 @@ export const fetchCurrentUser = () =>{
   }
 }
 
+export const signOut = () => {
+  localStorage.removeItem("jwt")
+  return {type:"SIGN_OUT"}
+}
+
 const setCurrentUser = (userData) => {
   return{
     type: 'SET_CURRENT_USER',

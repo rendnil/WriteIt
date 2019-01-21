@@ -1,9 +1,16 @@
 import React from "react"
 import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux'
 import {AppBar, Button, Toolbar, Typography} from '@material-ui/core';
 import withAuth from "../hocs/withAuth"
+import {signOut} from "../redux/actions/userAction"
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const handleClick = () => {
+    props.signOut()
+  }
+
   return(
     <div>
     <AppBar  position="static">
@@ -16,6 +23,9 @@ const NavBar = () => {
     <Button color="inherit">
       <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/new">Create Post</NavLink>
     </Button>
+    <Button onClick={handleClick} color="inherit">
+      Sign Out
+    </Button>
     </Toolbar>
     </AppBar>
 
@@ -23,4 +33,8 @@ const NavBar = () => {
   )
 }
 
-export default withAuth(NavBar)
+const mapDispatchToProps = (dispatch) => {
+  return {signOut: ()=>dispatch(signOut())}
+}
+
+export default withAuth(connect(null, mapDispatchToProps)(NavBar))
