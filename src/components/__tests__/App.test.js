@@ -3,6 +3,7 @@ import {shallow} from 'enzyme'
 import App from "../App"
 import NavBar from "../NavBar"
 
+
 let wrapped
 
 beforeEach(()=>{
