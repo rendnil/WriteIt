@@ -1,5 +1,6 @@
 import React from "react"
-import {shallow} from 'enzyme'
+import {mount} from 'enzyme'
+import Root from "../../Root"
 import WelcomePage from "../WelcomePage/WelcomePage"
 import LogIn from "../WelcomePage/LogIn"
 import SignUp from "../WelcomePage/SignUp"
@@ -7,7 +8,11 @@ import SignUp from "../WelcomePage/SignUp"
 let wrapped
 
 beforeEach(()=>{
-  wrapped = shallow(<WelcomePage/>)
+  wrapped = mount(
+    <Root>
+      <WelcomePage/>
+    </Root>
+  )
 })
 
 it ('contains LogIn component',() => {
