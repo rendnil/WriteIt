@@ -15,6 +15,10 @@ beforeEach(()=>{
   )
 })
 
+afterEach(() => {
+  wrapped.unmount()
+})
+
 it ('contains LogIn component',() => {
   console.log(wrapped)
   expect(wrapped.find(LogIn).length).toEqual(1)
