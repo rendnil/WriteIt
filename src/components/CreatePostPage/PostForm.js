@@ -22,6 +22,7 @@ class PostForm extends React.Component{
   }
 
   render(){
+    console.log(this.state.content);
     if (!this.state.submitted){
 
       return(
@@ -30,7 +31,7 @@ class PostForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} value={this.state.title} name="title"id="postTitle" type = "text" placeholder="Title"/>
         <br/>
-        <textarea onChange={this.handleChange} name="content" id="postContent" rows="10" cols="20" placeholder="Content"/>
+        <textarea onChange={this.handleChange} value={this.state.content} name="content" id="postContent" rows="10" cols="20" placeholder="Content"/>
         <br/>
         <input type="submit" value="Submit"/>
         </form>
