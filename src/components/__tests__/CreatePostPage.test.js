@@ -7,18 +7,19 @@ import PostForm from "../CreatePostPage/PostForm"
 
 
 
+
 let wrapped
 
 beforeEach(()=>{
   localStorage.setItem('jwt', "123")
-  const initialState={user:{
-    loggedIn:true
-  }}
+  const initialState = {
+   user:{loggedIn:true}
+  }
   wrapped = mount(
     <Root initialState={initialState}>
-
-      <CreatePostPage/>
-      
+      <MemoryRouter>
+        <CreatePostPage/>
+      </MemoryRouter>
     </Root>
   )
 })
@@ -29,6 +30,5 @@ afterEach(() => {
 })
 
 it ('contains PostForm component',() => {
-  console.log(wrapped)
   expect(wrapped.find(PostForm).length).toEqual(1)
 })
