@@ -50,6 +50,7 @@ class PostItem extends React.Component{
             primary = {this.props.post.title}
             secondary = {
               <React.Fragment>
+              <Typography variant="subtitle2">{this.props.post.content} </Typography>
               <Typography variant="subtitle2">Net Votes: {this.props.post.upvotes-this.props.post.downvotes} </Typography>
               <button onClick={this.handleUpvotes}>Up</button>
               <button onClick={this.handleDownvotes}>Down</button>

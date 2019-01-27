@@ -22,9 +22,7 @@ class PostForm extends React.Component{
   }
 
   render(){
-    console.log(this.state.content);
     if (!this.state.submitted){
-
       return(
         <div>
         <h1>Post Form</h1>
