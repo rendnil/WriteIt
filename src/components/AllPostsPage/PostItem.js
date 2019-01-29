@@ -1,14 +1,14 @@
 import React from "react"
 import { connect } from 'react-redux'
-import {updateUpvotes, updateDownvotes} from "../../redux/actions/updateUpvotesAction"
+import {updateUpvotes} from "../../redux/actions/updateUpvotesAction"
 import {Modal, ListItem, ListItemText, Typography} from '@material-ui/core';
 
 class PostItem extends React.Component{
   handleUpvotes = () => {
-    this.props.updateUpvotes(this.props.user.id, this.props.post.id)
+    this.props.updateUpvotes(this.props.user.id, this.props.post.id, true)
   }
   handleDownvotes = () => {
-    this.props.updateDownvotes(this.props.post.id, this.props.post.downvotes+1)
+    this.props.updateUpvotes(this.props.user.id, this.props.post.id, false)
   }
 
   // <ListItem alignItems="flex-start">
@@ -70,8 +70,8 @@ class PostItem extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    updateUpvotes: (id, upvotes)=>dispatch(updateUpvotes(id, upvotes)),
-    updateDownvotes: (id, downvotes)=>dispatch(updateDownvotes(id, downvotes))
+    updateUpvotes: (userId, postId, vote)=>dispatch(updateUpvotes(userId, postId, vote))
+
   }
 }
 
