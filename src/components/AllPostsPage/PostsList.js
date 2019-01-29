@@ -4,7 +4,7 @@ import PostItem from "./PostItem"
 import DateBuilder from "../../parsers/DateBuilder"
 import {List,ListItem} from '@material-ui/core';
 
-const PostsList = ({posts}) => {
+const PostsList = ({posts, user}) => {
   console.log("render post list");
   // debugger
   return(
@@ -13,7 +13,7 @@ const PostsList = ({posts}) => {
       <div style={{margin:"auto", maxWidth:"80%"}}>
         <List>
         {DateBuilder.sortLatest(posts).map((post)=>{
-          return <PostItem key={post.id} post={post} />
+          return <PostItem key={post.id} user={user} post={post} />
         })}
         </List>
       </div>
@@ -23,7 +23,10 @@ const PostsList = ({posts}) => {
 
 
 const mapStateToProps = (state) => {
-  return {posts:state.posts}
+  return {
+    posts:state.posts,
+    user: state.user.user
+  }
 }
 
 export default connect(mapStateToProps)(PostsList)

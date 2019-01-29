@@ -5,7 +5,7 @@ import {Modal, ListItem, ListItemText, Typography} from '@material-ui/core';
 
 class PostItem extends React.Component{
   handleUpvotes = () => {
-    this.props.updateUpvotes(this.props.post.id, this.props.post.upvotes+1)
+    this.props.updateUpvotes(this.props.user.id, this.props.post.id)
   }
   handleDownvotes = () => {
     this.props.updateDownvotes(this.props.post.id, this.props.post.downvotes+1)
@@ -42,6 +42,7 @@ class PostItem extends React.Component{
   //
   // </Modal>
   render(){
+    console.log("post ITEM USer", this.props.user);
     console.log("render post ITEM", this.props.post.title);
     return(
       <div>
