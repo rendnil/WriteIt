@@ -18,7 +18,7 @@ class App extends Component {
             <Route exact path = "/login" render = {() => <WelcomePage/>}/>
             <Route exact path = "/" render = {()=> <AllPostsPage/>}/>
             <Route exact path = "/new" render = {()=> <CreatePostPage/>}/>
-            <Route exact path = "/post" render = {()=> <PostContent/>}/>
+            <Route exact path = "/posts/:id" render = {(props)=><PostContent {...props}/>}/>
           </React.Fragment>
         </Router>
       </React.Fragment>

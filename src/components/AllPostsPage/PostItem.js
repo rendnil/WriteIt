@@ -54,7 +54,7 @@ class PostItem extends React.Component{
               <React.Fragment>
               <Typography variant="subtitle2">{this.props.post.content} </Typography>
               <Typography variant="subtitle2">Net Votes: {this.props.post.upvotes-this.props.post.downvotes} </Typography>
-              <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/post">Details</NavLink>
+              <NavLink style={{textDecoration:"none", color:"inherit"}} to = {`/posts/${this.props.post.id}`}>Details</NavLink>
               <button onClick={this.handleUpvotes}>Up</button>
               <button onClick={this.handleDownvotes}>Down</button>
               </React.Fragment>
