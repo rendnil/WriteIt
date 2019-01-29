@@ -19,7 +19,7 @@ export default class PostAdapter{
         },
         body: JSON.stringify({
           post:{
-            user_id: userId,
+            author_id: userId,
             title: title,
             content: content
           }
@@ -28,41 +28,7 @@ export default class PostAdapter{
       .then(r=>r.json())
     )
   }
-  static updatePostUpvotes(id, upvotes){
-    return(
-      fetch(`${API_BASE_URL}/posts/${id}`,{
-        method: "PATCH",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          post:{
-            upvotes: upvotes
-          }
-        })
-      })//end fetch
-      .then(r=>r.json())
-    )
-  }
-
-  static updatePostDownvotes(id, downvotes){
-    return(
-      fetch(`${API_BASE_URL}/posts/${id}`,{
-        method: "PATCH",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          post:{
-            downvotes: downvotes
-          }
-        })
-      })//end fetch
-      .then(r=>r.json())
-    )
-  }
+  
 
 
 }
