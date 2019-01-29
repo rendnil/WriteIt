@@ -17,6 +17,11 @@ const postsReducer = (state=defaultState, action) =>{
     case "CREATE_POST":
       return {...state, posts:[...state.posts, action.payload]}
 
+    case "SELECT_POST":
+      //find the post
+      let post = state.posts.find((post)=>post.id === action.payload)
+      return {...state, selectedPost: post}
+
     default:
         return state
   }

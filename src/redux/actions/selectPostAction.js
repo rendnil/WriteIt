@@ -1,4 +1,4 @@
 
 export const selectPost = (postId) => {
-  return{action:"SELECT_POST", payload: postId}
+  return{type:"SELECT_POST", payload: parseInt(postId)}
 }
