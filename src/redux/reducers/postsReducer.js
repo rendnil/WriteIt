@@ -1,18 +1,21 @@
-const defaultState = []
+const defaultState = {
+  posts: [],
+  selectedPost: null
+}
 let otherPosts = []
 
 const postsReducer = (state=defaultState, action) =>{
   switch(action.type){
     case "FETCH_ALL_POSTS":
-      return action.payload
+      return {...state, posts:action.payload}
     case "UPDATE_UPVOTES":
-      otherPosts = state.filter((post)=>{
+      otherPosts = state.posts.filter((post)=>{
         return post.id !== action.payload.post.id
       })
-      return [...otherPosts, action.payload.post]
+      return {...state, posts:[...otherPosts, action.payload.post]}
 
     case "CREATE_POST":
-      return [...state, action.payload]
+      return {...state, posts:[...state.posts, action.payload]}
 
     default:
         return state

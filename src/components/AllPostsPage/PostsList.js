@@ -24,7 +24,7 @@ const PostsList = ({posts, user}) => {
 
 const mapStateToProps = (state) => {
   return {
-    posts:state.posts,
+    posts:state.posts.posts,
     user: state.user.user
   }
 }
