@@ -1,8 +1,8 @@
-import PostAdapter from "../../apis/PostAdapter"
+import VoteAdapter from "../../apis/VoteAdapter"
 
-export const updateUpvotes = (id, upvotes) => {
+export const updateUpvotes = (userId, postId) => {
   return (dispatch) => {
-    PostAdapter.updatePostUpvotes(id, upvotes)
+    VoteAdapter.upvote(userId, postId)
     .then((data) => {
       dispatch({type:"UPDATE_UPVOTES", payload:data})
     })
@@ -10,7 +10,7 @@ export const updateUpvotes = (id, upvotes) => {
 }
 export const updateDownvotes = (id, downvotes) => {
   return (dispatch) => {
-    PostAdapter.updatePostDownvotes(id, downvotes)
+    VoteAdapter.updatePostDownvotes(id, downvotes)
     .then((data) => {
       dispatch({type:"UPDATE_DOWNVOTES", payload:data})
     })
