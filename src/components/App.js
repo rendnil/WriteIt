@@ -5,6 +5,7 @@ import NavBar from "./NavBar"
 import AllPostsPage from "./AllPostsPage/AllPostsPage"
 import CreatePostPage from "./CreatePostPage/CreatePostPage"
 import WelcomePage from "./WelcomePage/WelcomePage"
+import PostContent from "./PostPage/PostContent"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path = "/login" render = {() => <WelcomePage/>}/>
             <Route exact path = "/" render = {()=> <AllPostsPage/>}/>
             <Route exact path = "/new" render = {()=> <CreatePostPage/>}/>
+            <Route exact path = "/post" render = {()=> <PostContent/>}/>
           </React.Fragment>
         </Router>
       </React.Fragment>
