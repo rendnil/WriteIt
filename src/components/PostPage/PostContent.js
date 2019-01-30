@@ -6,8 +6,8 @@ import CommentsList from "./CommentsList"
 
 class PostContent extends React.Component{
   componentDidMount(){
-    console.log("GOT CALLED", this.props.match.params.id);
-    this.props.selectPost(this.props.match.params.id)
+    console.log("GOT CALLED", this.props.postId);
+    this.props.selectPost(this.props.postId)
   }
 
   render(){
@@ -21,7 +21,6 @@ class PostContent extends React.Component{
         <h4>{this.props.post.id}</h4>
         <h4>Title: {this.props.post.title}</h4>
         <p>Content: {this.props.post.content}</p>
-        <CommentsList postId = {this.props.match.params.id} />
         </div>
       )
     }else{
