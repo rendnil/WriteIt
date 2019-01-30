@@ -21,7 +21,7 @@ class PostContent extends React.Component{
         <h4>{this.props.post.id}</h4>
         <h4>Title: {this.props.post.title}</h4>
         <p>Content: {this.props.post.content}</p>
-        <CommentsList postId = {this.props.post.id} />
+        <CommentsList postId = {this.props.match.params.id} />
         </div>
       )
     }else{
@@ -31,7 +31,9 @@ class PostContent extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-  return{post: state.posts.selectedPost}
+  return{
+    post: state.posts.selectedPost
+  }
 }
 
 const mapDispatchToProps = dispatch => {
