@@ -1,11 +1,12 @@
 import React from "react"
 import CommentsList from "./CommentsList"
-
+import CommentForm from "./CommentForm"
 
 const CommentsContainer = (props) => {
   return(
     <div>
     <h1>CommentsContainer</h1>
+    <CommentForm />
     <CommentsList postId = {props.postId} />
     </div>
   )
