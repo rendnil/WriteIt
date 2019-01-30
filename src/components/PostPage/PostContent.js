@@ -1,6 +1,7 @@
 import React from "react"
 import {connect} from "react-redux"
 import {selectPost} from "../../redux/actions/selectPostAction"
+import CommentsList from "./CommentsList"
 
 
 class PostContent extends React.Component{
@@ -20,6 +21,7 @@ class PostContent extends React.Component{
         <h4>{this.props.post.id}</h4>
         <h4>Title: {this.props.post.title}</h4>
         <p>Content: {this.props.post.content}</p>
+        <CommentsList />
         </div>
       )
     }else{
