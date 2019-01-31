@@ -1,4 +1,5 @@
 import React from "react"
+import withAuth from "../../hocs/withAuth"
 import PostContent from "./PostContent"
 import CommentsContainer from "./CommentsContainer"
 
