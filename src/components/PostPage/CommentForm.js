@@ -1,5 +1,6 @@
 import React from "react"
 import {connect} from "react-redux"
+import {postComment} from "../../redux/actions/createCommentAction"
 
 
 class CommentForm extends React.Component{
@@ -13,8 +14,7 @@ class CommentForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    //this.props.createComment(this.props.user.id, this.state.title, this.state.content)
-
+    this.props.postComment(this.props.postId, this.props.user.id, this.state.content)
 
   }
 
@@ -39,8 +39,8 @@ const mapStateToProps = (state) => {
 }
 
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {}
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {postComment: (postId, commenterId, content)=>dispatch(postComment(postId, commenterId, content))}
+}
 
-export default connect(mapStateToProps)(CommentForm)
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

@@ -1,7 +1,6 @@
 import CommentsAdapter from "../../apis/CommentsAdapter"
 
-
-export postComment = (postId, commenterId, content) => {
+export const postComment = (postId, commenterId, content) => {
   return (dispatch) => {
     CommentsAdapter.createComment(postId, commenterId, content)
     .then((data)=>{

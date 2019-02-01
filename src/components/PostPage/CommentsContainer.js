@@ -6,7 +6,7 @@ const CommentsContainer = (props) => {
   return(
     <div>
     <h1>CommentsContainer</h1>
-    <CommentForm />
+    <CommentForm postId={props.postId}/>
     <CommentsList postId = {props.postId} />
     </div>
   )
