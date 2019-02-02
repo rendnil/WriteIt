@@ -5,9 +5,6 @@ import Root from "../../Root"
 import CreatePostPage from "../CreatePostPage/CreatePostPage"
 import PostForm from "../CreatePostPage/PostForm"
 
-
-
-
 let wrapped
 
 beforeEach(()=>{
