@@ -6,13 +6,13 @@ import CommentsList from "./CommentsList"
 
 class PostContent extends React.Component{
   componentDidMount(){
-    console.log("GOT CALLED", this.props.postId);
+    //console.log("GOT CALLED", this.props.postId);
     this.props.selectPost(parseInt(this.props.postId))
   }
 
   render(){
-    console.log("CONTENT PROPS", this.props.match);
-    console.log("SELECTED POST", this.props.post);
+    //console.log("CONTENT PROPS", this.props.match);
+    //console.log("SELECTED POST", this.props.post);
     if (this.props.post){
 
       return(
