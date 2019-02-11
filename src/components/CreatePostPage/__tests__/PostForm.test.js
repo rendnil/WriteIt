@@ -1,14 +1,15 @@
 import React from "react"
 import {mount} from 'enzyme'
-import Root from "../../Root"
-import CommentForm from "../PostPage/CommentForm"
+import Root from "../../../Root"
+import PostForm from "../PostForm"
+
 
 let wrapped
 
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <CommentForm />
+      <PostForm />
     </Root>
   )
 })
@@ -23,12 +24,18 @@ it('has a text area',() => {
 
 describe('the text area',() => {
   beforeEach(() => {
-    wrapped.find('textarea').simulate('change',{target:{value: "New Comment", name:'content'}})
+    wrapped.find('textarea').simulate('change',{
+      target:{
+        name:"content",
+        value:"New Content"
+      }
+    })
     wrapped.update()
   })
 
-  it("responds to user's input",() => {
-    expect(wrapped.find('textarea').prop('value')).toEqual('New Comment')
+  it('has a text area that responds to users',() => {
+    expect(wrapped.find('textarea').prop('value')).toEqual("New Content")
   })
 
-})//end text area describe
+
+})

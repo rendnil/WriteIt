@@ -1,7 +1,7 @@
 import React from "react"
 import {mount} from "enzyme"
-import Root from "../../Root"
-import LogIn from "../WelcomePage/Login"
+import Root from "../../../Root"
+import SignUp from "../SignUp"
 
 
 let wrapped
@@ -9,7 +9,7 @@ let wrapped
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <LogIn />
+      <SignUp />
     </Root>
   )
 })

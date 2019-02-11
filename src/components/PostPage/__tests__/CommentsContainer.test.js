@@ -1,9 +1,9 @@
 import React from "react"
 import {mount} from "enzyme"
-import Root from "../../Root"
-import CommentsContainer from "../PostPage/CommentsContainer"
-import CommentsList from "../PostPage/CommentsList"
-import CommentForm from "../PostPage/CommentForm"
+import Root from "../../../Root"
+import CommentsContainer from "../CommentsContainer"
+import CommentsList from "../CommentsList"
+import CommentForm from "../CommentForm"
 
 let wrapped
 

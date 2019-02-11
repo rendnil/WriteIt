@@ -1,7 +1,7 @@
 import React from "react"
 import {shallow} from 'enzyme'
-import Root from "../../Root"
-import PostContent from "../PostPage/PostContent"
+import Root from "../../../Root"
+import PostContent from "../PostContent"
 
 
 let wrapped

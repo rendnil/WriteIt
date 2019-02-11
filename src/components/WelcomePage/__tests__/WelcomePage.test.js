@@ -1,9 +1,9 @@
 import React from "react"
 import {mount} from 'enzyme'
-import Root from "../../Root"
-import WelcomePage from "../WelcomePage/WelcomePage"
-import LogIn from "../WelcomePage/LogIn"
-import SignUp from "../WelcomePage/SignUp"
+import Root from "../../../Root"
+import WelcomePage from "../WelcomePage"
+import LogIn from "../LogIn"
+import SignUp from "../SignUp"
 
 let wrapped
 

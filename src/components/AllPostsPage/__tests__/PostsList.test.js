@@ -1,9 +1,9 @@
 import React from "react"
 import {mount} from "enzyme"
-import Root from "../../Root"
-import DateBuilder from "../../parsers/DateBuilder"
-import PostsList from "../AllPostsPage/PostsList"
-import PostItem from "../AllPostsPage/PostItem"
+import Root from "../../../Root"
+import DateBuilder from "../../../parsers/DateBuilder"
+import PostsList from "../PostsList"
+import PostItem from "../PostItem"
 import { MemoryRouter } from 'react-router'
 
 let wrapped

@@ -1,9 +1,9 @@
 import React from "react"
 import {mount} from "enzyme"
-import Root from "../../Root"
-import PostPage from "../PostPage/PostPage"
-import PostContent from "../PostPage/PostContent"
-import CommentsContainer from "../PostPage/CommentsContainer"
+import Root from "../../../Root"
+import PostPage from "../PostPage"
+import PostContent from "../PostContent"
+import CommentsContainer from "../CommentsContainer"
 import { MemoryRouter } from 'react-router'
 
 let wrapped
