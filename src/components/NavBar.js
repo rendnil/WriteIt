@@ -23,7 +23,7 @@ const NavBar = (props) => {
     <Button color="inherit">
       <NavLink style={{textDecoration:"none", color:"inherit"}}to = "/new">Create Post</NavLink>
     </Button>
-    <Button onClick={handleClick} color="inherit">
+    <Button style={{marginLeft:"50%",marginRight: "0%"}} onClick={handleClick} color="inherit">
       Sign Out
     </Button>
     </Toolbar>

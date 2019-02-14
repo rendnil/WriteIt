@@ -20,7 +20,7 @@ class CommentForm extends React.Component{
   }
 
   render(){
-      console.log("hey", this.state);
+      
       return(
         <div>
         <h1>Comment Form</h1>
