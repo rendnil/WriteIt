@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 import {updateUpvotes} from "../../redux/actions/updateUpvotesAction"
-import {Modal, ListItem, ListItemText, Typography, IconButton, ThumbUpIcon} from '@material-ui/core';
+import {Modal, ListItem, ListItemText, Typography, IconButton} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
 
 class PostItem extends React.Component{
@@ -50,20 +50,28 @@ class PostItem extends React.Component{
         <ListItem divider={true} alignItems="flex-start">
 
         <div style={{display:"block"}}>
-        <IconButton onClick={this.handleUpvotes}><i class="material-icons">thumb_up</i></IconButton>
-        <br/>
-        <IconButton onClick={this.handleDownvotes}><i class="material-icons">thumb_down</i></IconButton>
+          <IconButton onClick={this.handleUpvotes}><i class="material-icons">thumb_up</i></IconButton>
+          <br/>
+          <IconButton onClick={this.handleDownvotes}><i class="material-icons">thumb_down</i></IconButton>
         </div>
-          <ListItemText
-            primary = {this.props.post.title}
-            secondary = {
-              <React.Fragment>
-              <Typography variant="subtitle2">{this.props.post.content} </Typography>
-              <Typography variant="subtitle2">Net Votes: {this.props.post.upvotes-this.props.post.downvotes} </Typography>
-              <NavLink style={{textDecoration:"none", color:"inherit"}} to = {`/posts/${this.props.post.id}`}>Details</NavLink>
-              </React.Fragment>
-            }
-            />
+
+
+        <ListItemText
+          primary = {this.props.post.title}
+          secondary = {
+            <React.Fragment>
+            <Typography variant="subtitle2">{this.props.post.content} </Typography>
+            <Typography variant="subtitle2">Net Votes: {this.props.post.upvotes-this.props.post.downvotes} </Typography>
+
+            </React.Fragment>
+          }
+          />
+        <div style={{margin:"auto"}}>
+          <IconButton>
+            <NavLink style={{textDecoration:"none", color:"inherit"}} to = {`/posts/${this.props.post.id}`}><i class="material-icons">notes</i></NavLink>
+          </IconButton>
+        </div>
+
         </ListItem>
       </div>
 
