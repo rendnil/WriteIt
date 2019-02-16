@@ -1,20 +1,24 @@
 import React from "react"
 import {mount} from "enzyme"
+import { MemoryRouter } from 'react-router'
 import Root from "../../../Root"
 import PostItem from "../PostItem"
+import {IconButton} from '@material-ui/core';
 
 let wrapped
 
 beforeEach(() => {
-  const initialState = {
+  const props = {
     post:{
       id:1, title:"Title", content:"Content"
     }
   }
 
   wrapped = mount(
-    <Root initialState={initialState}>
-      <PostItem />
+    <Root>
+      <MemoryRouter>
+      <PostItem post = {props.post}/>
+      </ MemoryRouter>
     </Root>
   )
 })
@@ -24,5 +28,5 @@ afterEach(() => {
 })
 
 it('contains upvote btn',() => {
-  expect(wrapped.find('btn').length).toEqual(3)
+  expect(wrapped.find(IconButton).length).toEqual(3)
 })
