@@ -8,6 +8,7 @@ import {IconButton} from '@material-ui/core';
 let wrapped
 
 beforeEach(() => {
+  
   const props = {
     post:{
       id:1, title:"Title", content:"Content"
