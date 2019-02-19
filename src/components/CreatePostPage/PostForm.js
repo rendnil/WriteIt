@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 import {createPost} from "../../redux/actions/createPostAction"
 import {Redirect} from "react-router"
-import {TextField} from '@material-ui/core';
+import {TextField, Button} from '@material-ui/core';
 
 // <TextField
 //          id="outlined-name"
@@ -35,7 +35,7 @@ class PostForm extends React.Component{
   render(){
     if (!this.state.submitted){
       return(
-        <div style={{maxWidth:"60%", margin:"auto"}}>
+        <div style={{maxWidth:"60%", margin:"auto", textAlign:"center"}}>
         <h1>Post Form</h1>
         <form onSubmit={this.handleSubmit}>
         <TextField
@@ -45,7 +45,7 @@ class PostForm extends React.Component{
                 onChange={this.handleChange}
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
+                fullWidth
               />
         {/*<input onChange={this.handleChange} value={this.state.title} name="title"id="postTitle" type = "text" placeholder="Title"/> */}
         <br/>
@@ -56,13 +56,13 @@ class PostForm extends React.Component{
                 onChange={this.handleChange}
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
-                multiline="true"
+                fullWidth
+                multiline
                 rows="10"
               />
         {/*<textarea onChange={this.handleChange} value={this.state.content} name="content" id="postContent" rows="10" cols="20" placeholder="Content"/>*/}
         <br/>
-        <input type="submit" value="Submit"/>
+        <Button onClick={this.handleSubmit} variant="contained" color="primary">Submit</Button>
         </form>
         </div>
       )
