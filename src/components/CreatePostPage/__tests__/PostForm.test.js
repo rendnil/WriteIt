@@ -59,3 +59,7 @@ describe('the text area',() => {
 
 
 })
+
+it('contains submit btn',() => {
+  expect(wrapped.find('button').length).toEqual(1)
+})
