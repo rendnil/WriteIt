@@ -1,6 +1,7 @@
 import React from "react"
 import {connect} from "react-redux"
 import {postComment} from "../../redux/actions/createCommentAction"
+import {TextField, Button} from '@material-ui/core';
 
 
 class CommentForm extends React.Component{
@@ -20,13 +21,23 @@ class CommentForm extends React.Component{
   }
 
   render(){
-      
+
       return(
         <div>
         <h1>Comment Form</h1>
         <form onSubmit={this.handleSubmit}>
         <br/>
-        <textarea onChange={this.handleChange} value={this.state.content} name="content" id="commentContent" rows="10" cols="20" placeholder="Comment"/>
+        <TextField
+                name="content"
+                label="Comment"
+                value={this.state.content}
+                onChange={this.handleChange}
+                margin="normal"
+                variant="outlined"
+                multiline
+                rows="5"
+              />
+      
         <br/>
         <input type="submit" value="Submit"/>
         </form>
